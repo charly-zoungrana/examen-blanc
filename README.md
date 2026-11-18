@@ -149,16 +149,9 @@ java "-javaagent:$agent" '-Djava.util.logging.SimpleFormatter.format=%5$s%n' -cp
 
 Avec `lecteur`, le dessin et sa surface totale s’affichent, puis l’enregistrement est refusé. Avec `editeur`, les mêmes opérations aboutissent et le fichier `target/dessin.bin` est écrit.
 
-Extrait d’une exécution avec le compte `lecteur`.
+Extrait de la sortie console du compte `lecteur`, présenté en image. La journalisation inclut la durée de l’appel refusé.
 
-```text
-Surface totale : 12440.84
-Entrée  Dessin.serialiser(..)
-Sortie  Dessin.serialiser(..) (1.164 ms)
-Accès refusé. Rôle requis : EDITION
-```
-
-**Capture à ajouter.** Se connecter en tant que `lecteur` et capturer les lignes d’entrée et de sortie de `Dessin.serialiser`, sa durée et le message de refus. Fichier souhaité → `docs/captures/console-lecteur.png`.
+![Sortie console du compte lecteur avec durée et refus de sérialisation](docs/captures/console-lecteur.png)
 
 ## 6 · Interface graphique
 
@@ -168,4 +161,6 @@ Le [mode graphique Swing](src/main/java/net/zoungrana/interfacegraphique/Fenetre
 java "-javaagent:$agent" '-Djava.util.logging.SimpleFormatter.format=%5$s%n' -cp "$app;$agent" net.zoungrana.Main --graphique
 ```
 
-**Capture à ajouter.** Se connecter en tant qu’`editeur`, puis activer **Périmètre** et **Changer le style**. Capturer la fenêtre entière avec les figures et le périmètre affiché. Fichier souhaité → `docs/captures/atelier-editeur.png`.
+Capture du contenu de la fenêtre Swing en mode édition après activation de **Périmètre** et **Changer le style**.
+
+![Atelier de dessin en mode édition avec style bleu et périmètre total de 600,48](docs/captures/atelier-editeur.png)
