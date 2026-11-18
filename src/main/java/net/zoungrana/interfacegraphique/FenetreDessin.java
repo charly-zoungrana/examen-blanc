@@ -73,6 +73,8 @@ public final class FenetreDessin {
         commandes.setOpaque(false);
         var mesure = new JLabel();
         var choixPerimetre = new JToggleButton("Périmètre");
+        var tailleBouton = choixPerimetre.getPreferredSize();
+        choixPerimetre.setPreferredSize(new Dimension(tailleBouton.width + 20, tailleBouton.height));
         choixPerimetre.setEnabled(edition);
         choixPerimetre.addActionListener(e -> {
             boolean perimetre = choixPerimetre.isSelected();
