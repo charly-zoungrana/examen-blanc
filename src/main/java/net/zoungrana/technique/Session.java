@@ -32,6 +32,11 @@ public final class Session {
         ROLES.remove();
     }
 
+    public static boolean possede(Role role) {
+        var roles = ROLES.get();
+        return roles != null && roles.contains(role);
+    }
+
     static void verifier(Role role) {
         var roles = ROLES.get();
         if (roles == null) {
@@ -56,4 +61,3 @@ public final class Session {
         }
     }
 }
-

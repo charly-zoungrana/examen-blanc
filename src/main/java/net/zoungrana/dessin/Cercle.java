@@ -12,6 +12,14 @@ public final class Cercle extends Figure {
         this.rayon = dimension(rayon);
     }
 
+    public Point centre() {
+        return centre;
+    }
+
+    public double rayon() {
+        return rayon;
+    }
+
     @Override
     public double perimetre() {
         return 2 * Math.PI * rayon;

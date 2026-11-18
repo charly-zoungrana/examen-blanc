@@ -45,6 +45,11 @@ public final class Dessin implements Serializable {
     }
 
     @ExigeRole(Role.LECTURE)
+    public List<Figure> figures() {
+        return List.copyOf(figures);
+    }
+
+    @ExigeRole(Role.LECTURE)
     public double traiter() {
         return traitement.traiter(List.copyOf(figures));
     }
@@ -63,5 +68,3 @@ public final class Dessin implements Serializable {
         }
     }
 }
-
-

@@ -1,5 +1,8 @@
 package net.zoungrana.dessin;
 
+import net.zoungrana.technique.ExigeRole;
+import net.zoungrana.technique.Role;
+
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Objects;
@@ -15,15 +18,18 @@ public final class Parametrage implements Serializable {
         return style;
     }
 
+    @ExigeRole(Role.EDITION)
     public void abonner(ObservateurStyle observateur) {
         observateurs.add(Objects.requireNonNull(observateur));
         observateur.actualiser(style);
     }
 
+    @ExigeRole(Role.EDITION)
     public void desabonner(ObservateurStyle observateur) {
         observateurs.remove(observateur);
     }
 
+    @ExigeRole(Role.EDITION)
     public void definirStyle(Style nouveauStyle) {
         Objects.requireNonNull(nouveauStyle);
         if (style.equals(nouveauStyle)) {
@@ -35,4 +41,3 @@ public final class Parametrage implements Serializable {
         }
     }
 }
-

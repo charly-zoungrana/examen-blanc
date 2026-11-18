@@ -7,6 +7,6 @@
         <include within="net.zoungrana.Main"/>
         <include within="net.zoungrana.dessin..*"/>
         <include within="net.zoungrana.technique..*"/>
+        <include within="net.zoungrana.interfacegraphique..*"/>
     </weaver>
 </aspectj>
-

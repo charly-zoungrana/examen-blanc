@@ -1,5 +1,8 @@
 package net.zoungrana.dessin;
 
+import net.zoungrana.technique.ExigeRole;
+import net.zoungrana.technique.Role;
+
 import java.util.Objects;
 
 public abstract class Figure implements ObservateurStyle {
@@ -11,6 +14,7 @@ public abstract class Figure implements ObservateurStyle {
     }
 
     @Override
+    @ExigeRole(Role.EDITION)
     public void actualiser(Style style) {
         this.style = Objects.requireNonNull(style);
     }
@@ -28,4 +32,3 @@ public abstract class Figure implements ObservateurStyle {
         return valeur;
     }
 }
-

@@ -1,5 +1,8 @@
 package net.zoungrana.dessin;
 
+import net.zoungrana.technique.ExigeRole;
+import net.zoungrana.technique.Role;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -8,6 +11,7 @@ public final class Groupe extends Figure {
     private static final long serialVersionUID = 1L;
     private final List<Figure> enfants = new ArrayList<>();
 
+    @ExigeRole(Role.EDITION)
     public void ajouter(Figure figure) {
         Objects.requireNonNull(figure);
         if (figure == this || figure instanceof Groupe groupe && groupe.contient(this)) {
@@ -18,6 +22,7 @@ public final class Groupe extends Figure {
     }
 
     @Override
+    @ExigeRole(Role.EDITION)
     public void actualiser(Style style) {
         super.actualiser(style);
         for (Figure enfant : enfants) {
@@ -25,6 +30,7 @@ public final class Groupe extends Figure {
         }
     }
 
+    @ExigeRole(Role.EDITION)
     public boolean supprimer(Figure figure) {
         return enfants.remove(figure);
     }
@@ -57,4 +63,3 @@ public final class Groupe extends Figure {
         return texte.toString();
     }
 }
-

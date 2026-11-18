@@ -1,10 +1,12 @@
 package net.zoungrana;
 
 import net.zoungrana.dessin.*;
+import net.zoungrana.interfacegraphique.FenetreDessin;
 import net.zoungrana.technique.SecuriteAspect;
 import net.zoungrana.technique.Session;
 import org.aspectj.lang.Aspects;
 
+import javax.swing.SwingUtilities;
 import java.io.Console;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -32,6 +34,11 @@ public final class Main {
             dessin.ajouter(groupe);
         } finally {
             Session.deconnecter();
+        }
+
+        if (args.length == 1 && "--graphique".equals(args[0])) {
+            SwingUtilities.invokeLater(() -> FenetreDessin.ouvrir(dessin));
+            return;
         }
 
         Console console = System.console();
@@ -78,4 +85,3 @@ public final class Main {
         }
     }
 }
-

@@ -14,6 +14,18 @@ public final class Rectangle extends Figure {
         this.hauteur = dimension(hauteur);
     }
 
+    public Point coinSuperieurGauche() {
+        return coinSuperieurGauche;
+    }
+
+    public double largeur() {
+        return largeur;
+    }
+
+    public double hauteur() {
+        return hauteur;
+    }
+
     @Override
     public double perimetre() {
         return 2 * (largeur + hauteur);
