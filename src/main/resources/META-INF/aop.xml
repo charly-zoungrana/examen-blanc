@@ -1,0 +1,12 @@
+<aspectj>
+    <aspects>
+        <aspect name="net.zoungrana.technique.JournalAspect"/>
+        <aspect name="net.zoungrana.technique.SecuriteAspect"/>
+    </aspects>
+    <weaver>
+        <include within="net.zoungrana.Main"/>
+        <include within="net.zoungrana.dessin..*"/>
+        <include within="net.zoungrana.technique..*"/>
+    </weaver>
+</aspectj>
+
